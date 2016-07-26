@@ -13,5 +13,5 @@ $(hostname) $0 $@
 
 
 #### VARIABLES ####
-dirProjectRoot="$(realpath $DIR/../../)";
+dirProjectRoot="$(realpath $DIR/../../../../)";
 dirVar="$dirProjectRoot/var";
