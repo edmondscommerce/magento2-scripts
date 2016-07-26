@@ -2,11 +2,16 @@
 
 if [[ -z "$DIR" ]]
 then
-    readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+    if [ -h "${BASH_SOURCE[0]}" ]
+    then
+        readonly DIR="$( cd "$( readlink -f "${BASH_SOURCE[0]}" )" && pwd )";
+    else
+        readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+    fi
 fi
 
 cd $DIR;
-source ./_top.inc.bash;
+source /_top.inc.bash;
 
 
 mkdir -p "$dirVar/page_cache";
