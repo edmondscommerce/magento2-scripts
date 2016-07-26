@@ -4,5 +4,5 @@
   "type": "magento2-module",
   "version": "100.0.1",
   "require": {},
-  "bin": ["fixpermissions.bash"]
+  "bin": ["bin/fixpermissions.bash"]
 }
