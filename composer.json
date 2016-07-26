@@ -1,0 +1,8 @@
+{
+  "name": "edmondscommerce/magento2-scripts",
+  "description": "Magento 2 scripts",
+  "type": "magento2-module",
+  "version": "100.0.1",
+  "require": {},
+  "bin": ["fixpermissions.bash"]
+}
