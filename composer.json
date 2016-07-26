@@ -2,7 +2,6 @@
   "name": "edmondscommerce/magento2-scripts",
   "description": "Magento 2 scripts",
   "type": "magento2-module",
-  "version": "100.0.1",
   "require": {},
   "type": "magento2-module",
   "notification-url": "https://packagist.org/downloads/",
