@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-if [[ -z "$DIR" ]]
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+if [[ $? != 0 ]]
 then
-    if [ -h "${BASH_SOURCE[0]}" ]
-    then
-        readonly DIR="$( cd "$( readlink -f "${BASH_SOURCE[0]}" )" && pwd )";
-    else
-        readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
-    fi
+    echo "Failed cd-ing into the the binaries folder, aborting"
+    exit 1
 fi
 
-cd $DIR;
-source /_top.inc.bash;
+source $DIR/_top.inc.bash;
 
 
 mkdir -p "$dirVar/page_cache";
