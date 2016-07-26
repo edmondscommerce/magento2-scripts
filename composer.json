@@ -5,5 +5,9 @@
   "version": "100.0.1",
   "require": {},
   "type": "magento2-module",
+  "notification-url": "https://packagist.org/downloads/",
+  "license": [
+    "MIT"
+  ],
   "bin": ["bin/fixpermissions.bash"]
 }
